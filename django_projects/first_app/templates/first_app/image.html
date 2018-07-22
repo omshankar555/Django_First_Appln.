@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+      <form>
+          <h2> Upload an image </h2>
+          <div class="form-group">
+            <label for="exampleInputFile">Select Image</label>
+              <select>
+                  <option value="select" default="select">Select</option>
+                  <option value="volvo">Volvo</option>
+                  <option value="saab">Saab</option>
+                  <option value="mercedes">Mercedes</option>
+                  <option value="audi">Audi</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputFile">File input
+                <input type="file" id="exampleInputFile"> </label>
+            <p class="help-block"> Example block-level help text here. </p>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+    </div>
+{% endblock %}

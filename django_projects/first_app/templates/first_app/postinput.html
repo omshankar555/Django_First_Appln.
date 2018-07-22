@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding Num</title>
+</head>
+
+<body bgcolor="lightcyan">
+    <form action="first_app/add" method="post">
+        {% csrf_token %}
+        Enter First Num: <input type="text" name="t1"> <br>
+        Enter Second Num: <input type="text" name="t2"> <br>
+        <input type="submit" value="Addition">
+    </form>>
+</body>
+</html>
