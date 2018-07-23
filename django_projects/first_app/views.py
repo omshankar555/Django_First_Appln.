@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from . forms import RegistrationForm, EditProfileForm
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 #from django.contrib.auth.forms import UserCreationForm
 import datetime
 
@@ -24,13 +25,14 @@ def register(request):
     else:
         form = RegistrationForm()
 
-        args = {'form' : form}
+        args = {'form': form}
         return render(request, 'first_app/reg_form.html', args)
 
 def view_profile(request):
     args = {'user': request.user}
     return render(request, 'first_app/profile.html', args)
 
+#@login_required
 def edit_profile(request):
     if request.method == 'POST':
 
@@ -43,13 +45,14 @@ def edit_profile(request):
             form.save()
             return redirect('/first_app/profile')
     else:
-        form = EditProfileForm(instance = request.user)
+        form = EditProfileForm(instance=request.user)
         args = {'form': form}
         return render(request, 'first_app/edit_profile.html', args)
 
+#@login_required
 def change_password(request):
     if request.method == 'POST':
-        form = PasswordChangeForm(data= request.POST, user=request.user)
+        form = PasswordChangeForm(data=request.POST, user=request.user)
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
@@ -57,7 +60,7 @@ def change_password(request):
         else:
             return redirect('/first_app/change-password')
     else:
-        form = PasswordChangeForm(user = request.user)
+        form = PasswordChangeForm(user=request.user)
         args = {'form': form}
         return render(request, 'first_app/change_password.html', args)
 
@@ -69,26 +72,3 @@ def today_is(request):
 def image(request):
     return render(request, 'first_app/image.html')
 
-
-"""
-def getinput(request):
-    return render(request, "getinput.html")
-
-def postinput(request):
-    return render(request, "postinput.html")
-
-def add(request):
-    if request.method == "GET":
-        x = int(request.POST.get['t1'])
-        y = int(request.POST.get['t2'])
-        z = x+y
-        return HttpResponse(z)
-    #    return HttpResponse("<html> <body bgcolor = lightcyan> Sum is:" +str(z)+ "</body> </html>")
-    else:
-        x = int(request.POST['t1'])
-        y = int(request.POST['t2'])
-        z = x + y
-        return HttpResponse(z)
-    #    return HttpResponse("<html> <body bgcolor = lightcyan> Sum is:" + str(z) + "</body> </html>")
-
-"""

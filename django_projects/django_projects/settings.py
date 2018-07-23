@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_projects.middleware.LoginRequiredMiddleware'
 ]
 
 ROOT_URLCONF = 'django_projects.urls'
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'django_projects.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['first_app/templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,4 +121,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/first_app'
+LOGIN_REDIRECT_URL = '/first_app/'
+
+LOGIN_URL = '/first_app/login'
+
+LOGIN_EXEMPT_URLS = (
+    r'^first_app/logout/$',
+    r'^first_app/register/$',
+    r'^first_app/reset-password/$',
+    r'^first_app/reset-password/done/$',
+    r'^first_app/reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
+    r'^first_app/reset-password/complete/$',
+)
+
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
