@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from . import views
+from django_projects import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.login_redirect, name='login_redirect'),
     url(r'^admin/', admin.site.urls),
-    url(r'^first_app/', include('first_app.urls'))
-
-]
+   # url(r'^$', views.index, name='blog_index'),
+    url(r'^first_app/', include('first_app.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

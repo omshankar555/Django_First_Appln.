@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+from django.contrib.auth.models import User
 
 # Create your models here.
 class UserProfile(models.Model):
@@ -9,6 +9,19 @@ class UserProfile(models.Model):
     city = models.CharField(max_length=50, default='')
     website = models.URLField(default='')
     phone = models.IntegerField(default=0)
+    image = models.ImageField(upload_to='profile_image', blank = True)
+
+    transport = models.IntegerField(default=0)
+    food = models.IntegerField(default=0)
+    rent = models.IntegerField(default=0)
+    shopping = models.IntegerField(default=0)
+    misc = models.IntegerField(default=0)
+    cmp_exp = models.IntegerField(default=0)
+
+    def __unicode__(self):
+        #self.fields['cmp_exp'].widget.attrs['readonly'] = True
+        cmp_exp  = sum(self.transport + self.food + self.rent + self.shopping + self.misc)
+        return str(self.cmp_exp)
 
     def __str__(self):
         return self.user.username

@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from . import models
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required= True)
@@ -24,7 +25,6 @@ class RegistrationForm(UserCreationForm):
 
         if commit:
             user.save()
-
         return user
 
 class EditProfileForm(UserChangeForm):
@@ -37,5 +37,4 @@ class EditProfileForm(UserChangeForm):
             'last_name',
             'password'
         )
-
 

@@ -25,7 +25,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     {% if user.is_authenticated %}
                     <ul class="nav navbar-nav">
-                      <li><a href="/first_app">Home</a></li>
+                      <li><a href="{% url 'blog_index' %}">Home</a></li>
                       <li><a href="{% url 'profile' %}">Profile</a></li>
                       <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
                       <li><a href="{% url 'change_password' %}">Change Password</a></li>
@@ -48,6 +48,16 @@
             <h1> This is Base Page </h1>
         </div>
     {% endblock %}
+
+    <footer>
+    <div class="container-fluid">
+        <div class="row pad">
+            <div class="col-lg-12 text-center">
+                Copyright &copy; 2018 <strong>Django App</strong>
+            </div>
+        </div>
+    </div>
+    </footer>
 
 </body>
 </html>
