@@ -3,6 +3,12 @@ from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 
 # Create your models here.
+"""
+class UserProfileManager(models.Manager):
+    def get_queryset(self):
+        return super(UserProfileManager, self).get_queryset().filter(city= 'Chennai')
+"""
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     description = models.CharField(max_length=100, default='')
@@ -18,10 +24,10 @@ class UserProfile(models.Model):
     misc = models.IntegerField(default=0)
     cmp_exp = models.IntegerField(default=0)
 
-    def __unicode__(self):
+    def get_compute(self):
         #self.fields['cmp_exp'].widget.attrs['readonly'] = True
-        cmp_exp  = sum(self.transport + self.food + self.rent + self.shopping + self.misc)
-        return str(self.cmp_exp)
+        self.cmp_exp  = (self.transport + self.food + self.rent + self.shopping + self.misc)
+        return self.user.cmp_exp
 
     def __str__(self):
         return self.user.username

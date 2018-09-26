@@ -2,8 +2,9 @@
 
 {% block body %}
     <div class="container">
-      <form>
+      <form method="post">
           <h2> Upload an image </h2>
+          {% csrf_token %}
           <div class="form-group">
             <label for="exampleInputFile">Select Image</label>
               <select>
@@ -24,4 +25,5 @@
 
       </form>
     </div>
+ <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  <br> <br>
 {% endblock %}

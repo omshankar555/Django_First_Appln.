@@ -3,7 +3,6 @@ from . import views
 from django.contrib.auth.views import login, logout, password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 
 urlpatterns = [
-    url(r'^$', views.index, name='blog_index'),
     url(r'^login/$', login, {'template_name': 'first_app/login_1.html'}, name = 'login'),
     url(r'^logout/$', logout, {'template_name': 'first_app/logout_1.html'}, name = 'logout'),
     url(r'^register/$', views.register, name='register'),
@@ -14,7 +13,7 @@ urlpatterns = [
     url(r'^reset-password/done/$', password_reset_done, name='password_reset_done'),
     url(r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', password_reset_confirm, {'template_name': 'first_app/reset_password_confirm.html', 'post_reset_redirect': 'password_reset_complete'}, name='password_reset_confirm'),
     url(r'^reset-password/complete/$', password_reset_complete, {'template_name': 'first_app/reset_password_complete.html'}, name='password_reset_complete'),
-
+    url(r'^upload/$', views.image, name='image_blog')
 ]
 
 """
@@ -22,8 +21,5 @@ urlpatterns = [
     url(r'^time/$', views.today_is, name='blog_time'),
     url(r'^upload/$', views.image, name='image_blog')
 
-    url(r'^add/$', views.add, name='add_num'),
-    url(r'^getinput/$', views.getinput, name='add_input'),
-    url(r'^postinput/$', views.postinput, name='add_post') 
 """
 

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+        <div class="container">
+            <div class="col-md-8">
+                <h2> &nbsp; Welcome {{user.first_name}}!</h2>
+
+                <div class="container">
+                    <embed src="https://www.youtube.com/embed/F9Bo89m2f6g" allowfullscreen="true" width="525" height="400">
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary"> Submit</button>
+                </form>
+
+                <h3>{{ text }}</h3>
+                    {% for post in posts %}
+                        <h3> {{ post.post }} </h3>
+                        <p> Posted by {{post.user.get_full_name }} on {{ post.created }} </p>
+                    {% endfor %}
+            </div>
+        </div>
+
+
+<br>
+    {% endblock %}
+
+<!--
+
+{% for reply in postss %}
+                                <h3> {{ reply.reply }} </h3>
+                                <p> Posted by {{reply.user.get_full_name }} on {{ reply.created }} </p>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <button type = "submit" class="btn btn-primary"> Reply </button>
+                                    </form>
+                            {% endfor %}
+
+
+        <div class="col-md-4">
+        <h2>Other People</h2>
+
+        {% for user in users %}
+            <a href="{% url 'view_profile_with_pk' pk=user.pk %}">
+                <h3>{{ user.username }}</h3>
+            </a>
+            {% if not user in friends %}
+            <a href="{% url 'change_friends' operation='add' pk=user.pk %}">
+            <button type="button" class="btn btn-success">Add Friend</button>
+            </a>
+            {% endif %}
+        {% endfor %}
+
+        <h2>Friends</h2>
+        {% for friend in friends %}
+            <a href="{% url 'view_profile_with_pk' pk=friend.pk %}">
+                <h3>{{ friend.username }}</h3>
+            </a>
+            <a href="{% url 'change_friends' operation='remove' pk=friend.pk %}">
+            <button type="button" class="btn btn-default">Remove Friend</button>
+            </a>
+        {% endfor %}
+    </div>
+    -->
+

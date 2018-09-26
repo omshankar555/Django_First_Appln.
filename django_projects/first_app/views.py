@@ -5,14 +5,7 @@ from django.contrib.auth.decorators import login_required
 from first_app.forms import RegistrationForm, EditProfileForm
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 #from . forms import RegExpenseForm, EntryExpenseForm
-import datetime
 
-def index(request):
-    numbers = [10,20,30,40,50]
-    name = 'Bigdatamatica'
-
-    args = {'myname' : name, 'numbers': numbers}
-    return render(request, 'first_app/home.html', args)
 
 def register(request):
     if request.method =='POST':
@@ -62,11 +55,14 @@ def change_password(request):
         args = {'form': form}
         return render(request, 'first_app/change_password.html', args)
 
+def image(request):
+    return render(request, 'first_app/image.html')
+
+
 """
 def today_is(request):
     now = datetime.datetime.now()
     html = "<html><body bgcolor = lightcyan><div><h2> Current date and time: {0}-{1}-{2} </h2> </div></body></html>".format(now.year, now.month, now.day)
     return HttpResponse(html)
 
-def image(request):
-    return render(request, 'first_app/image.html') """
+"""

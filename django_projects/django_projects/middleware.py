@@ -34,9 +34,6 @@ class LoginRequiredMiddleware:
 
 
 """
-# Socio-Task
-This is for my internship project.
-
 Requirements to run this Django Project:
 
 1). Python 3.5 Version.

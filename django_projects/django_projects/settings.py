@@ -27,11 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
     'first_app',
+    'home',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,10 +121,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+"""
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static"),
+    ]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+"""
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'django_projects/media')
 
-LOGIN_REDIRECT_URL = '/first_app/'
+LOGIN_REDIRECT_URL = '/home/'
 
 LOGIN_URL = '/first_app/login'
 
@@ -136,7 +149,6 @@ LOGIN_EXEMPT_URLS = (
     r'^first_app/reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
     r'^first_app/reset-password/complete/$',
 )
-
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025

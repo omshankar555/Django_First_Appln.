@@ -14,7 +14,8 @@ class RegistrationForm(UserCreationForm):
             'last_name',
             'email',
             'password1',
-            'password2'
+            'password2',
+
         )
 
     def save(self, commit=True):
@@ -35,6 +36,7 @@ class EditProfileForm(UserChangeForm):
             'email',
             'first_name',
             'last_name',
-            'password'
+            'password',
+
         )
 
