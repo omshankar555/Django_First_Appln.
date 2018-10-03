@@ -24,10 +24,10 @@ class UserProfile(models.Model):
     misc = models.IntegerField(default=0)
     cmp_exp = models.IntegerField(default=0)
 
-    def get_compute(self):
+    #def get_compute(self):
         #self.fields['cmp_exp'].widget.attrs['readonly'] = True
-        self.cmp_exp  = (self.transport + self.food + self.rent + self.shopping + self.misc)
-        return self.user.cmp_exp
+    #    self.cmp_exp  = (self.transport + self.food + self.rent + self.shopping + self.misc)
+    #    return self.user.cmp_exp
 
     def __str__(self):
         return self.user.username
