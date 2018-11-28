@@ -26,7 +26,7 @@ Pre- Requirements:
     6). Then you may have to create super user to access the webapp, follow this command 
                 --> python manage.py createsuperuser
 
-    7). Then you may have to migrate the database, follow these command --> 
-                    python manage.py check 
-                    python manage.py makemigrations 
-                    python manage.py migrate
+    7). Then you may have to migrate the database, follow these command,
+                >> python manage.py check 
+                >> python manage.py makemigrations 
+                >> python manage.py migrate
