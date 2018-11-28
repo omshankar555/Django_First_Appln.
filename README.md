@@ -1,12 +1,12 @@
 
 
-Pre- Requirements:
+    Pre- Requirements:
 
-1). Python 3.5 Version.
+    1). Python 3.5 Version.
 
-2). Installing Virtual Environment. (Already installed the env, just we need to activate using this path env\scripts\activate.bat inside Django_First_Appln working directory.)
+    2). Installing Virtual Environment. (Already installed the env, just we need to activate using this path env\scripts\activate.bat inside Django_First_Appln working directory.)
 
-3). Install Django Software using pip install "django==1.10" (I installed 1.10 version).
+    3). Install Django Software using pip install "django==1.10" (I installed 1.10 version).
 
 
     To Run this project:-
