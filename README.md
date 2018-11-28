@@ -1,12 +1,12 @@
 
 
-    Pre- Requirements:
+Pre- Requirements:
 
-    1). Python 3.5 Version.
+1). Python 3.5 Version.
 
-    2). Installing Virtual Environment. (Already installed the env, just we need to activate using this path env\scripts\activate.bat inside Django_First_Appln working directory.)
+2). Install an Virtual Environment. 
 
-    3). Install Django Software using pip install "django==1.10" (I installed 1.10 version).
+3). Install Django Software using, pip install "django==1.10" (I installed Django 1.10 version).
 
 
     To Run this project:-
@@ -23,7 +23,8 @@
 
     5). Open the Webbrowser type the url as http://127.0.0.1:8000
 
-    6). Then you may have to create super user to access the webapp, follow this command --> python manage.py createsuperuser
+    6). Then you may have to create super user to access the webapp, follow this command 
+                --> python manage.py createsuperuser
 
     7). Then you may have to migrate the database, follow these command --> 
                     python manage.py check 
