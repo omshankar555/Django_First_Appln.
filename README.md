@@ -11,10 +11,19 @@ Requirements:
 To Run this project:-
 
 --> Open the command prompt terminal. And try the following steps:-
-1). Enter into the Downloaded Soacil-Task Folder..
+1). Enter into the Downloaded Django_First_Appln Folder..
+
 2). Activate the Virtual Environment. using this syntax:-  env\scripts\activate.bat
-3). enter into the django_projects folder.
-4). Run the Django Server using this command. (python manage.py runserver)
+
+3). Enter into the django_projects folder in terminal command prompt.
+
+4). Run the Django Server using this command --> python manage.py runserver
+
 5). Open the Webbrowser type the url as http://127.0.0.1:8000
-6). We have to register by clicking register button at the top right corner. If u don't want to register directly u can login by this credentials.. 
-Username : admin And Password : django_projects
+
+6). Then you may have to create super user to access the webapp, follow this command --> python manage.py createsuperuser
+
+7). Then you may have to migrate the database, follow these command --> 
+                python manage.py check 
+                python manage.py makemigrations 
+                python manage.py migrate
