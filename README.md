@@ -13,20 +13,20 @@ Pre- Requirements:
 
 --> Open the command prompt terminal. And try the following steps:-
 
-    *). Enter into the Downloaded Django_First_Appln Folder..
+    ..> Enter into the Downloaded Django_First_Appln Folder..
 
-    *). Activate the Virtual Environment. using this syntax:-  env\scripts\activate.bat
+    ..> Activate the Virtual Environment. using this syntax:-  env\scripts\activate.bat
 
-    *). Enter into the django_projects folder in terminal command prompt.
+    ..> Enter into the django_projects folder in terminal command prompt.
 
-    *). Run the Django Server using this command --> python manage.py runserver
+    ..> Run the Django Server using this command --> python manage.py runserver
 
-    *). Open the Webbrowser type the url as http://127.0.0.1:8000
+    ..> Open the Webbrowser type the url as http://127.0.0.1:8000
 
-    *). Then you may have to create super user to access the webapp, follow this command 
+    ..> Then you may have to create super user to access the webapp, follow this command 
                 --> python manage.py createsuperuser
 
-    *). Then you may have to migrate the database, follow these command,
+    ..> Then you may have to migrate the database, follow these command,
                 >> python manage.py check 
                 >> python manage.py makemigrations 
                 >> python manage.py migrate
