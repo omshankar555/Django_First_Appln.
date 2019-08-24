@@ -1,4 +1,4 @@
-
+This is a small project that i designed for my practice case. And I created a user information page that can register new users and update and logged in user can access our application. 
 
 Pre- Requirements:
 
